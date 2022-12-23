@@ -1,0 +1,37 @@
+body {
+  background-image: url(/images/팝업창이미지.jpg);
+}
+
+h1 {
+  font-family: 'Yeon Sung', cursive;
+  font-size: 70px;
+  text-align: center;
+}
+
+p {
+  color: red;
+  text-decoration: underline;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+ul li {
+  padding-top: 20px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  float: right;
+}
+
+a:hover {
+  color: red;
+}
+
+div {
+  border: 1px solid black;
+  background-color: white;
+}

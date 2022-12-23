@@ -1,0 +1,970 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&family=Gugi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+#container {                       /* 홈페이지 전체 테두리 */
+  margin: 0 auto;
+  width: 1920px;
+  height: 100%;                    /* *** 유동적 높이조절로 함 *** */
+}
+
+header {                           /* 로고 + 네비게이션 전체 범주 */
+  width: 100%;
+  height: 100px;
+  background-color: black;
+}
+
+#logo {                            /* 로고 영역 */
+  float: left;
+  width: 300px;
+  height: 100px;
+  background-color: white;
+}
+
+#logo h2 {                         /* 로고 글자 스타일 */
+  font-family: 'Gaegu', cursive;
+  font-weight: 500;
+  font-size: 50px;
+  color: rgba(0, 0, 0, 0.74);
+  text-align: center;
+  text-shadow: 0 -1px #222;
+  padding-top: 20px;
+}
+
+nav {                              /* 네비게이션 바 영역 */
+  float: right;
+  width: 1620px;
+  height: 100px;
+  padding-top: 30px;
+}
+
+#topmenu {
+  height: 60px;
+}
+
+#topmenu > li {
+  float: left;                      /* 주 메뉴를 왼쪽정렬 */
+  position: relative;
+}
+
+#topmenu > li > a{
+  display: block;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 1px #07c;
+  padding: 8px 60px;
+  margin-right: 50px;
+}
+
+#topmenu > li > a > span {
+  font-size: 1em;
+}
+
+#topmenu > li > a:hover {
+  color: gray;
+  text-shadow: 0 -1px black;
+}
+
+#topmenu > li > ul {
+  display: none;                 /* 서브메뉴 감추기 */
+  position: absolute;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.6);
+  left: 25px;
+  margin: 0;
+}
+
+#topmenu > li > ul > li {         /* 서브메뉴 항목 지정 */
+  padding: 10px 10px 10px 30px;
+}
+
+#topmenu > li > ul > li > a {     
+  font-size: 14px;
+  padding: 8px;
+  color: #000;
+}
+
+#topmenu > li:hover > ul {        
+  display: block;                 /* 메인 메뉴 항목 위로 마우스 올리면 서브메뉴 표시*/
+  z-index: 10;                    /* 슬라이드 쇼에 가리지 않게 조절 */
+}
+
+#topmenu > li > ul > li > a:hover {
+  color: #f00;                  /*서브메뉴 마우스 올릴때 속성*/
+}                   
+
+#loginbox {                       /* 로그인 박스 영역 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}     
+
+#loginbox a {                     /* 로그인박스 버튼 링크 속성 */
+  margin-left: 50px;
+  margin-top: 10px;
+  position: relative;
+  display: inline-block;
+  color: #03e9f4;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  overflow: hidden;
+}
+
+#loginbox a:hover {
+  background: #03e9f4;
+  color: #050801;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 200px #03e9f4;
+  -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+
+#loginbox a:nth-child(1){
+  filter: hue-rotate(270deg);
+}
+
+#loginbox a:nth-child(2){
+  filter: hue-rotate(110deg);
+}
+
+#loginbox a span{
+  position: absolute;
+  display: block;
+}
+
+#loginbox a span:nth-child(1){
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,transparent,#03e9f4);
+  animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1{
+  0%{
+      left: -100%;
+  }
+  50%,100%{
+      left: 100%;
+  }
+}
+
+#loginbox a span:nth-child(2){
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg,transparent,#03e9f4);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes animate2{
+  0%{
+      top: -100%;
+  }
+  50%,100%{
+      top: 100%;
+  }
+}
+
+#loginbox a span:nth-child(3){
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg,transparent,#03e9f4);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.50s;
+}
+
+@keyframes animate3{
+  0%{
+      right: -100%;
+  }
+  50%,100%{
+      right: 100%;
+  }
+}
+
+#loginbox a span:nth-child(4){
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg,transparent,#03e9f4);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes animate4{
+  0%{
+      bottom: -100%;
+  }
+  50%,100%{
+      bottom: 100%;
+  }
+}
+
+#slideshow {                      /* 저작권 없는 사진 영역 */
+  clear: both;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+#slides > img {
+  width: 100%;                     /* 너비 */
+  float: left;                     /* 가로로 배치 */
+  transition-delay: 5s;
+  transition: all 1s;
+}
+
+
+#contents {                        /* 공지사항 + 퀵 링크 버튼 범주 */
+  width: 100%;
+  height: 400px;
+}
+
+#tabMenu {                        /* 업데이트/우수작 박스 범위 */
+  float: left;
+  width: 600px;
+  height: 100%;
+  background-color:white;
+  margin-top: 10px;
+}
+
+#tabMenu input[type="radio"] {    /* 라디오 버튼 감추기 */
+  display: none;
+}
+
+#tabMenu label {                  /* 업데이트/우수작 라디오 버튼 */
+  display: inline-block;
+  margin: 0 0;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #aaa;
+  border: 1px solid transparent;
+}
+
+#tabMenu label:hover {            /* 라디오 버튼에 마우스 올리면 */
+  color: #222;
+  cursor: pointer;
+}
+
+#tabMenu input:checked + label {  /* checked 되있을때 */
+  color: #b00;
+  border: 1px solid #ddd;
+  background-color: #eee;
+}
+
+.tabContent {       
+  display: none;               
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd;
+}
+
+.tabContent h2 {
+  display: none;
+}
+
+#notice ul {
+  list-style: disc;
+  margin-left: 30px;
+}
+
+#notice ul li {
+  font-size: 16px;
+  line-height: 2.5;
+}
+
+#gallery ul {
+  list-style: none;
+}
+
+#gallery ul li {                   /* 수상작 사진 영역 속성 */
+  float: left;
+  width: 180px;
+  height: 305px;
+  margin-right: 10px;
+  border: solid 1px black;
+  text-align: center;
+}
+
+#gallery ul li > img {
+  margin: 30px 0px 0px 0px;
+  overflow: hidden;
+}
+
+#gallery ul li:first-child {
+  margin-left: 10px;
+}
+
+#tab1:checked ~ #notice,           /* 라디오버튼 클릭시 내용 바꾸기 */
+#tab2:checked ~ #gallery {
+  display: block;
+}
+
+#quicklink {                       /* 퀵 링크 버튼 범주 */
+  float: right;
+  width: 1320px;
+  height: 100%;
+  margin-top: 30px;                /* 슬라이드사진과의 거리 */
+}
+
+#quicklink ul {
+  padding: 0;
+  overflow: hidden;
+}
+
+#quicklink ul li {
+  float: left;
+  width: 33%;
+  text-align: center;
+  margin: 10px 0;
+}
+
+#quicklink ul li a span {          /* 링크(원) 속성 */
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  border: 1px solid gray;
+  line-height: 150px;
+  transition: all 0.2s linear;
+}
+
+#quicklink ul li a span:hover {
+  transform: scale(0.9);
+}
+
+#quick-icon1 {
+  background-image:url('/images/군산대로고\(메인화면\).jpg');
+  background-repeat: no-repeat;
+}
+
+#quick-icon2 {
+  background-image:url('/images/통합정보시스템로고.jpg');
+}
+
+#quick-icon3 {
+  background-image:url('/images/구글드라이브로고.png');
+  background-repeat: no-repeat;
+}
+
+#quicklink ul li a p {
+  margin-top: 15px;
+  font-weight: 600;
+  color: black;
+}
+
+footer {                           /* 제작자 정보 입력 칸 */
+  width: 100%;
+  height: 80px;
+  border-top: 2px solid #222;
+}
+
+#bottomMenu {
+  width: 100%;
+  height: 20px;
+  position: relative;
+}
+
+#bottomMenu ul {                   /* 푸터 위로부터의 거리 */
+  margin-top: 15px;
+}
+
+#bottomMenu ul li {
+  float: left;
+  padding: 5px 20px;
+  border-right: 1px solid #ddd;
+}
+
+#bottomMenu ul li:last-child {     /* 푸터 정보 끝 링크의 오른쪽 선 숨기기 */
+  border-right: none;
+}
+
+#bottomMenu ul li a, #bottomMenu ul li a:visited {
+  font-size: 15px;
+  color: #666;
+}
+
+#SNS {
+  position: absolute;
+  right: 0;
+}
+
+#SNS ul li {
+  border: none;
+  padding: 5px;
+}
+
+#information {
+  clear: left;
+  margin-top: 25px;
+  margin-left: 20px;
+}
+
+p {
+  font-size: 14px;
+  color: #666;
+}
+
+
+
+/* 여기부턴 소개글.html 스타일 영역입니다. */
+
+
+
+#about {                          /* 소개글 텍스트 전체 영역 */
+  margin-left: 300px;
+  margin-right: 300px;                              
+  width: 1320px;
+  height: 850px;
+  overflow: hidden;
+  border-left: solid 5px black;
+  border-right: solid 5px black;
+}
+
+#about h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-family: 'Yeon Sung', cursive;
+  font-size: 50pt;
+}
+
+#about p {                       /* 설명문 속성 */
+  margin-top: 50px;
+  font-family: 'Gaegu', cursive;
+  font-size: 30pt;
+  text-align: center;
+}
+
+#about ol {
+  margin-top: 20px;
+  margin-left: 25px;
+}
+
+#about ol li {
+  font-size: 15pt;
+  margin-left: 20px;
+}
+
+#about table {                   /* 소개글 표 전체 영역 */
+  border: solid 3px black;
+  border-collapse: collapse;
+  margin-top: 60px;
+  margin-left: 60px;
+  width: 1200px;
+  height: 250px;
+}
+
+#about table tr:first-child {
+  background-color: skyblue;
+}
+
+#about table td {                /* 소개글 표 글씨 속성 */
+  border: 1px solid black;
+  text-align: center;
+  font-size: 20pt;
+}
+
+
+
+/* 여기부턴 참여대학.html 스타일 영역입니다 */
+
+
+
+#boxarea {                       /* 참여대학 페이지 전체 범위 */
+  border: solid 3px black;
+  border-bottom: none;
+  border-collapse: collapse;
+  margin-left: 300px;            
+  margin-right: 300px;
+  width: 1320px;
+  height: 100%;
+}
+
+#boxarea h1 {
+  font-family:'Black Han Sans', sans-serif;
+  font-size: 50pt;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#boxarea h2 {
+  font-family: 'Yeon Sung', cursive;
+  font-size: 30pt;
+  text-align: left;
+  margin-top: 70px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+#collist1 {                     /* 참여대학 박스 범위 */
+  width: 100%;
+  height: 1835px;
+}
+
+#collist1 div {                 /* 참여대학 개별 박스 속성 */
+  display: inline-block;
+  width: 400px;
+  height: 400px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 20px;
+  border: solid 5px black;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  margin-left: 25px;
+  box-shadow: 3px 3px 3px 3px rgb(39, 130, 167);
+  transition: all 0.2s linear;
+}
+
+
+#collist1 div:hover {
+  transform: scale(1.1);
+}
+
+#collist1 div img {             /* 참여대학 이미지 위치 속성 */
+  margin-top: 30px;
+  margin-bottom: -30px;
+}
+
+
+
+/* 여기부턴 준비.html 스타일 영역입니다. */
+
+
+
+#readyzone {                    /* 준비 페이지 전체 범위 */
+  border-collapse: collapse;
+  margin-left: 300px;
+  margin-right: 300px;
+  width: 1320px;
+  height: 1500px;
+  background-image: url(/images/메모장\ 이미지2.png);
+}
+
+#readyzone h1 {                 /* 대제목 속성 */
+  font-family: 'Gugi', cursive;
+  font-size: 50pt;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#readyzone h2 {                 /* 중제목 속성 */
+  font-family: 'Gugi', cursive;
+  font-size: 30pt;
+  text-align: left;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  margin-left: 150px;
+}
+
+#readyzone p {                  /* 모집인원, 모집기간, 프로그램 */
+  font-size: 15pt;
+  color: black;
+  font-family: 'Gothic A1', sans-serif;
+  margin-left: 200px;
+}
+
+#readyzone ul li {
+  font-family: 'Gothic A1', sans-serif;
+  font-size: 15pt;
+  margin-left: 200px;
+}
+
+#readyzone h3 {                 /* 소제목 속성 */
+  font-size: 20pt;
+  color: red;
+  margin-top: 20px;
+  margin-left: 170px;
+}
+
+#readyzone table {              /* 교과목 전체 범위 */
+  border: solid 3px black;
+  border-collapse: collapse;
+  margin-top: 60px;
+  margin-left: 170px;
+  width: 1000px;
+  height: 250px;
+}
+
+#readyzone table tr:first-child {
+  font-weight: bold;
+  background-color:rgb(67, 159, 196);
+}
+
+#readyzone table td {
+  font-family: 'Gothic A1', sans-serif;
+  font-size: 15pt;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 20pt;
+}
+
+#fils  {                        /* 첨부파일 범위 속성 */
+  width: 1320px;
+  height: 80px;
+  background-color: gray;
+  margin-left: 300px;
+  margin-right: 300px;
+  position: relative;
+}
+
+#fils ul {
+  margin-top: 20px;
+}
+
+#fils ul li {
+  font-family: 'Gothic A1', sans-serif;
+  font-size: 15pt;
+  float: left;
+  margin-top: 20px;
+  margin-right: 5px;
+  padding: 5px 20px;
+  border-right: 1px solid #ddd;
+  text-decoration: underline 1px;
+}
+
+#fils ul li a, #fils ul li a:visited {
+  color: black;
+}
+
+#fils ul li:first-child {
+  margin-left: 175px;
+}
+
+#fils ul li:last-child {
+  border-right: none;
+}
+
+
+
+/* 여기부턴 보고서.html 스타일 영역입니다. */
+
+
+
+#reportzone {                 /* 보고서 안내 전체 영역 */
+  border-collapse: collapse;
+  margin-left: 300px;
+  margin-right: 300px;
+  width: 1320px;
+  height: 2000px;
+  background-image: url(/images/메모장\ 이미지.png);
+}
+
+#reportzone h1 {              /* 대제목 속성 */
+  font-family: 'Yeon Sung', cursive;
+  font-size: 50pt;
+  text-align: center;
+  padding-top: 40px;
+  margin-bottom: 30px;
+}
+
+#reportzone h2 {              /* 중제목 속성 */
+  font-family: 'Gugi', cursive;
+  font-size: 30pt;
+  margin-top: 150px;
+  margin-bottom: 10px;
+  margin-left: 130px;
+}
+
+#reportzone ul li {          /* 보고서 안내 내용 글 속성 */
+  font-family: 'Gothic A1', sans-serif;
+  font-size: 20pt;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 140px;
+}
+
+#reportzone ul li:nth-child(4) {
+  margin-top: -30px;
+}
+
+#reportzone ul li img {
+  margin-left: 20px;
+}
+
+#reportzone ul li > img:first-child {
+  width: 1000px;
+  height: 100%;
+  border: solid 5px black;
+}
+
+#reportzone ul li > img:last-child {
+  width: 1000px;
+  height: 100%;
+}
+
+#gangzo {                   /* *(안내문) 속성 */
+  margin-bottom: 100px;
+  color: red;
+  text-decoration: underline red;
+}
+
+
+
+/* 여기부턴 양식 다운로드.html 스타일 영역입니다 */
+
+
+
+#downloadbox {              /* 양식 다운로드 전체 영역 */
+  border-collapse: collapse;
+  margin-left: 300px;
+  margin-right: 300px;
+  width: 1320px;
+  height: 2100px;
+  border-left: solid 3px black;
+  border-right: solid 3px black;
+  background-color: rgb(238, 238, 238);
+}
+
+#downloadbox h1 {
+  font-family: 'Yeon Sung', cursive;
+  font-size: 50pt;
+  text-align: center;
+  padding-top: 50px;
+}
+
+
+#downloadbox h1 img {
+  border: none;
+}
+
+#downloadbox h3 {
+  font-size: 20pt;
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-bottom: 50px;
+}
+
+#downloadbox img {
+  margin: auto;
+  display: block;
+  border: 1px solid black;
+}
+
+#fils2  {                        /* 첨부파일 범위 속성 */
+  width: 1320px;
+  height: auto;
+  background-color: gray;
+  margin-left: 220px;
+  margin-right: 300px;
+  position: relative;
+}
+
+#fils2 ul {
+  margin-top: 20px;
+}
+
+#fils2 ul li {
+  font-family: 'Gothic A1', sans-serif;
+  font-size: 15pt;
+  float: left;
+  margin-top: 20px;
+  margin-right: 5px;
+  padding: 5px 20px;
+  border-right: 1px solid #ddd;
+  text-decoration: underline 1px;
+}
+
+#fils2 ul li a, #fils ul li a:visited {
+  color: black;
+}
+
+#fils2 ul li:first-child {
+  margin-left: 175px;
+}
+
+#fils2 ul li:last-child {
+  border-right: none;
+}
+
+
+
+/* 여기부턴 문의사항.html 스타일 영역입니다 */
+
+
+
+#QnA {                     /* 문의사항 전체 영역 */
+  border-collapse: collapse;
+  margin-left: 300px;
+  margin-right: 300px;
+  width: 1320px;
+  height: 950px;
+  border-left: solid 3px black;
+  border-right: solid 3px black;
+  background-image: url('/images/질문.jpg');
+  color:rgb(238, 238, 238);
+}
+
+#QnA h1 {
+  font-family: 'Gugi', cursive;
+  font-size: 50pt;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 30px;
+}
+
+#QnA h2 {
+  font-size: 30pt;
+  margin-top: 50px;
+  text-align: center;
+}
+
+#QnA h3 {
+  font-size: 20pt;
+  border: 1px solid whitesmoke;
+  margin: 20px 100px 1px 100px;
+  /* 박스 배경색 변경해보기 */
+}
+
+#QnA ul {
+  border: 1px solid whitesmoke;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#QnA ul li {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* 여기부턴 로그인창.html 스타일 영역입니다. */
+
+#login a {
+  text-decoration: none;
+  color: black;
+}
+
+#login li {
+  list-style: none;
+}
+
+.wrap {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.login {
+  width: 30%;
+  height: 600px;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login_sns {
+  padding: 20px;
+  display: flex;
+}
+
+.login_sns li {
+  padding: 0px 15px;
+}
+
+.login_sns a {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 50px;
+  background: white;
+  font-size: 20px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4), -3px -3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.login_id {
+  margin-top: 20px;
+  width: 80%;
+}
+
+.login_id input {
+  width: 100%;
+  height: 50px;
+  border-radius: 30px;
+  margin-top: 10px;
+  padding: 0px 20px;
+  border: 1px solid lightgray;
+  outline: none;
+}
+
+.login_pw {
+  margin-top: 20px;
+  width: 80%;
+}
+
+.login_pw input {
+  width: 100%;
+  height: 50px;
+  border-radius: 30px;
+  margin-top: 10px;
+  padding: 0px 20px;
+  border: 1px solid lightgray;
+  outline: none;
+}
+
+.login_etc {
+  padding: 10px;
+  width: 80%;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.submit {
+  margin-top: 50px;
+  width: 80%;
+}
+.submit input {
+  width: 100%;
+  height: 50px;
+  border: 0;
+  outline: none;
+  border-radius: 40px;
+  background: linear-gradient(to left, rgb(255, 77, 46), rgb(255, 155, 47));
+  color: white;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+}
